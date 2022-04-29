@@ -13,6 +13,7 @@
     "firebase": "^9.6.11",
     "framer-motion": "^4.0.0",
     "react": "^18.0.0",
+    "react-chrono": "^1.14.0",
     "react-dom": "^18.0.0",
     "react-icons": "^3.0.0",
     "react-router": "^6.3.0",

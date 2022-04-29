@@ -163,23 +163,26 @@ export default function Timeline({props}){
 	];
   
 	  return (
-		  <> <div style = {{justifyContent:'center', alignItems:'center'}}>
 
-		<div style={{ width: "1000px", height: "500px", justifyContent:'center', alignItems:'center'}}>
-			<Chrono
-  items={items1}
-  theme={{
-    primary: "black",
-    secondary: "#d5f4e6",
-    cardBgColor: "#80ced6",
-    cardForeColor: "#80ced6",
-    titleColor: "#618685"
+<> <div style={{width: "1000px", height: "500px"}}>
+	<Chrono
+		align={'center'}
+		justify={'center'}
+			items={items1}
+theme={{
+primary: "black",
+secondary: "#d5f4e6",
+cardBgColor: "#80ced6",
+cardForeColor: "#80ced6",
+titleColor: "#618685"
   }}
   mode="HORIZONTAL"
 />
 
-		  </div><div style={{ width: "1000px", height: "500px", justifyContent:'center', alignItems:'center' }}>
+		  </div><div style={{ width: "1000px", height: "500px"}}>
 		  <Chrono
+		  align={'center'}
+		  justify={'center'}
   items={items2}
   theme={{
     primary: "black",
@@ -191,7 +194,6 @@ export default function Timeline({props}){
   mode="HORIZONTAL"
   itemPosition = "CENTER"
 />
-			  </div>
 			  </div> </>
 	  )
 	}

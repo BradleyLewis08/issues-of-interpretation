@@ -14,8 +14,8 @@ import {
     ButtonGroup
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
-import SecondPage from '../pages/secondpage';
-export default function FirstPage() {
+import SixthPage from '../pages/sixthpage';
+export default function FifthPage() {
     const navigate = useNavigate();
     return (
         <div style={{ backgroundImage: `url(${image})`, backgroundPosition: "center",
@@ -34,7 +34,7 @@ export default function FirstPage() {
 <Flex alignContent='center' justifyContent='center'>
 <Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
 <Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/secondpage')}>Next</Button>
+<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/sixthpage')}>Next</Button>
 </Box>
 </Center>
 </Flex>

@@ -176,6 +176,7 @@ cardBgColor: "#80ced6",
 cardForeColor: "#80ced6",
 titleColor: "#618685"
   }}
+  margin ='100px'
   mode="HORIZONTAL"
 />
 
@@ -192,7 +193,7 @@ titleColor: "#618685"
     titleColor: "#618685"
   }}
   mode="HORIZONTAL"
-  itemPosition = "CENTER"
+  margin ='100px'
 />
 			  </div> </>
 	  )

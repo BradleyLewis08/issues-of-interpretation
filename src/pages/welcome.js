@@ -11,8 +11,11 @@ import {
 } from '@chakra-ui/react';
 
 import Navbar from '../nav/navbar';
+import { useNavigate } from 'react-router';
+import FirstPage from '../pages/firstpage';
 
 export default function Welcome() {
+  const navigate = useNavigate();
   return (
 	<>
 	<Center style={{
@@ -47,6 +50,7 @@ export default function Welcome() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+              onClick={() => navigate('/firstpage')}
               colorScheme={'green'}
               bg={'blue.400'}
               rounded={'full'}

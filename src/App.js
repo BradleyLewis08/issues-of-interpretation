@@ -9,15 +9,15 @@ import {
   Grid,
   theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 import AppRoutes from './Routes';
-import Navbar from './nav/navbar';
+import { ProvideAuth } from './firebase/useAuth';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <AppRoutes />
+      <ProvideAuth>
+        <AppRoutes />
+      </ProvideAuth>
     </ChakraProvider>
   );
 }

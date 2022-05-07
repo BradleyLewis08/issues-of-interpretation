@@ -50,7 +50,7 @@ export default function Welcome() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
-              onClick={() => navigate('/firstpage')}
+              onClick={() => navigate('/signin')}
               colorScheme={'green'}
               bg={'blue.400'}
               rounded={'full'}

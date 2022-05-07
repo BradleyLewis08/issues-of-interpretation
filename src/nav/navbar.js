@@ -24,10 +24,13 @@ import {
 
   import { useNavigate } from 'react-router';
 
+  import { useAuth } from '../firebase/useAuth';
+
   
   export default function Navbar() {
 	const { isOpen, onToggle } = useDisclosure();
 	const navigate = useNavigate();
+	const auth = useAuth();
 
 	return (
 	  <Box>
@@ -59,7 +62,7 @@ import {
 			  textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
 			  fontFamily={'heading'}
 			  color={useColorModeValue('gray.800', 'white')}>
-			  ioi
+				Issues of Interpretation
 			</Text>
   
 			<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -72,7 +75,24 @@ import {
 			justify={'flex-end'}
 			direction={'row'}
 			spacing={6}>
+			{ auth.user ? (
+				<Button
+					onClick={() => auth.signout().then(() => navigate('/'))}
+					display={{ base: 'none', md: 'inline-flex' }}
+					fontSize={'sm'}
+					fontWeight={600}
+					color={'white'}
+					bg={'blue.400'}
+					href={'#'}
+					_hover={{
+						bg: 'blue.500',
+					}}>
+					Logout
+				</Button>
+			) : (
+			<>
 			<Button
+			  onClick={() => navigate('/signin')}
 			  as={'a'}
 			  fontSize={'sm'}
 			  fontWeight={400}
@@ -93,9 +113,10 @@ import {
 			  }}>
 			  Sign Up
 			</Button>
+			</>
+			)}
 		  </Stack>
 		</Flex>
-  
 		<Collapse in={isOpen} animateOpacity>
 		  <MobileNav />
 		</Collapse>

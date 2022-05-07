@@ -25,7 +25,7 @@ export default function Welcome() {
 		justifyContent: 'center',
 		alignItems: 'center',
 	}}>
-      <Container maxW={'3xl'}>
+      <Container maxW={'4xl'}>
         <Stack
           as={Box}
           textAlign={'center'}
@@ -35,13 +35,22 @@ export default function Welcome() {
             fontWeight={800}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
-            Issues of{' '} 
+            Issues of Interpretation: {' '} 
             <Text as={'span'} color={'blue.400'}>
-             interpretation 
+  
             </Text>
           </Heading>
+          <Heading
+            fontWeight={800}
+            fontSize={{ base: '3xl', sm: '3xl', md: '3xl' }}
+            lineHeight={'110%'}>
+              <Text as={'span'} color={'blue.400'}>
+          A Case Study for Understanding Interpretations of “the Procession of Women”  Painting at Dura Europos </Text></Heading>
+          
+        <Text style={{fontStyle:'italic', fontSize:20}}>By Rikki W. Liu, Jon-Paul Lapeña, Zoe Hsu, Thuyen Vu, Bradley Lewis, Sachin Thakrar</Text>
+
           <Text color={'gray.500'}>
-		  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          The purpose of this learning module is to develop the learner's knowledge and understanding of the importance of contextualization when viewing and interpreting art. The project particularly focuses on the “Procession of Women” baptistry painting in Dura Europos as a case study of the complexity of constructing interpretations. The learning module guides learners through different levels of contextualization and the content of scholarship focused on analyzing and interpreting this painting. 
           </Text>
           <Stack
             direction={'column'}

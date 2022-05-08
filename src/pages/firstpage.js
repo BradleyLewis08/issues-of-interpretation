@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import image from "../duraeuropos2.png";
 import image2 from "../motherandchild.png";
 
@@ -17,23 +16,6 @@ import {
     Image
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
-=======
-import image from '../duraeuropos.jpeg';
-
-import {
-  Box,
-  Heading,
-  Container,
-  Text,
-  Button,
-  Stack,
-  useColorModeValue,
-  Center,
-  Flex,
-  ButtonGroup,
-} from '@chakra-ui/react';
-import { useNavigate } from 'react-router';
->>>>>>> 31b74e187097b55957009cded148917ccad9b1a2
 import SecondPage from '../pages/secondpage';
 
 export default function FirstPage() {
@@ -58,7 +40,6 @@ export default function FirstPage() {
   </Box>
 </Container> */}
 
-<<<<<<< HEAD
 
 
   <Heading color={'black'} position="absolute" left="200px" marginRight ='600px' top="200px" marginTop ='0px'>Introduction and Goals </Heading>
@@ -76,31 +57,3 @@ export default function FirstPage() {
         
       );
 }
-=======
-      <Flex alignContent="center" justifyContent="center">
-        <Center w="1200px" h="600px" bg="lightblue" margin="100px">
-          <Box
-            bg="white"
-            w="94%"
-            h="90%"
-            p={4}
-            color="white"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Button
-              colorScheme="blue"
-              marginLeft="1000px"
-              marginTop="450px"
-              onClick={() => navigate('/secondpage')}
-            >
-              Next
-            </Button>
-          </Box>
-        </Center>
-      </Flex>
-    </div>
-  );
-}
->>>>>>> 31b74e187097b55957009cded148917ccad9b1a2

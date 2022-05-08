@@ -9,10 +9,15 @@ import {
 	useColorModeValue,
 	Center,
   } from '@chakra-ui/react';
-  
+
+  import { useNavigate } from 'react-router';
+  import { useAuth } from '../firebase/useAuth';
+
   import Navbar from '../nav/navbar';
   
   export default function Welcome() {
+	const navigate = useNavigate();
+	const auth = useAuth();
 	return (
 	  <>
 	  <Center style={{
@@ -33,7 +38,7 @@ import {
 			  color={'blue.400'}
 			  fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
 			  lineHeight={'110%'}>
-			  	Welcome!
+			  	Welcome, {auth.userData.firstName}.
 			</Heading>
 			<Stack
 			  direction={'column'}
@@ -44,6 +49,7 @@ import {
 			  <Button
 				colorScheme={'green'}
 				bg={'blue.400'}
+				onClick={() => navigate('/firstpage')}
 				rounded={'full'}
 				px={6}
 				_hover={{

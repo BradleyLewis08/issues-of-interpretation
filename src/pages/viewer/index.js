@@ -5,6 +5,6 @@ export default function Viewer(){
 		<div>
 			<h1>3D Viewer</h1>
 			<h1>3D Viewer</h1>
-		</div>
+		</div>	
 	)
 }

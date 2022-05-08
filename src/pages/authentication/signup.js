@@ -16,12 +16,12 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-  import { useNavigate } from 'react-router';
+  import { useAuth } from '../../firebase/useAuth';
+	import { useNavigate } from 'react-router';
 
-  import signup from '../../firebase/authentication';
-  
   export default function Signup() {
 	const navigate = useNavigate();
+	const auth = useAuth()
 	const [showPassword, setShowPassword] = useState(false);
 	const [firstName , setFirstName] = useState('');
 	const [lastName , setLastName] = useState('');
@@ -102,9 +102,12 @@ import {
 				  bg={'blue.400'}
 				  color={'white'}
 				  onClick={() => {
-					signup(firstName, lastName, email, password).then(() => {
-						navigate("/start");
-					})
+					auth.signup(firstName, lastName, email, password).then(() => {
+						navigate('/')
+					}).catch((error) => {
+						console.log(error)
+					}
+					)
 				  }}
 				  _hover={{
 					bg: 'blue.500',

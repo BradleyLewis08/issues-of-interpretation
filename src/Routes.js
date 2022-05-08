@@ -2,11 +2,13 @@ import React from 'react';
 import {
 	BrowserRouter as Router,
 	Routes,
+	Navigate,
 	Route,
 } from 'react-router-dom';
 
 import Welcome from './pages/welcome';
 import Signup from  './pages/authentication/signup';
+import Signin from './pages/authentication/signin';
 import Navbar from './nav/navbar';
 import Start from './pages/start'
 import Timeline from './pages/timeline'
@@ -23,16 +25,18 @@ import NinthPage from './pages/ninthpage';
 import TenthPage from './pages/tenthpage';
 import TwelfthPage from './pages/twelfthpage';
 import EleventhPage from './pages/eleventhpage';
+import { useAuth } from './firebase/useAuth';
+
 export default function AppRoutes(){
+	const auth = useAuth();
 	return (
 		<Router>
 		<>
 			<Navbar />
 			<Routes>
-				<>
-					<Route path="/" element={<Welcome />} />
-					<Route path="/signup" element={<Signup />} />
-					<Route path="/start" element={<Start />} />
+				{ auth.userData ? (
+					<>
+					<Route path="/" element={<Start />} />
 					<Route path="/timeline" element={<Timeline />} />
 					<Route path="/viewer" element={<Viewer />} />
 					<Route path="/firstpage" element={<FirstPage />} />
@@ -47,8 +51,15 @@ export default function AppRoutes(){
 					<Route path="/tenthpage" element={<TenthPage />} />
 					<Route path="/eleventhpage" element={<EleventhPage />} />
 					<Route path="/twelfthpage" element={<TwelfthPage />} />
-				</>
-				{/* <Route path="/login" element={<Login />} /> */}
+					</>
+				) : (
+					<>
+						<Route path="/" element={<Welcome />} />
+						<Route path="/signup" element={<Signup />} />
+						<Route path="/signin" element={<Signin />} />
+					</>
+				)
+			}
 			</Routes>
 		</>
 		</Router>

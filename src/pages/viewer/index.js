@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import App from './App';
 
-export default function Viewer(){
-	return (
-		<div>
-			<h1>3D Viewer</h1>
-			<h1>3D Viewer</h1>
-		</div>	
-	)
+export default function basic() {
+  return (
+    <div>
+      <App />
+    </div>
+  )
 }

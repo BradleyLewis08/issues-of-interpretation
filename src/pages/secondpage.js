@@ -1,6 +1,6 @@
 import React from 'react';
-import image from "../duraeuropos.jpeg";
-
+import image from "../duraeuropos2.png";
+import image2 from "../duraeuropos3.jpeg";
 import {
     Box,
     Heading,
@@ -11,7 +11,8 @@ import {
     useColorModeValue,
     Center,
     Flex,
-    ButtonGroup
+    ButtonGroup,
+    Image
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
 import ThirdPage from '../pages/thirdpage';
@@ -32,11 +33,14 @@ export default function SecondPage() {
 </Container> */}
 
 <Flex alignContent='center' justifyContent='center'>
-<Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
-<Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/thirdpage')}>Next</Button>
-</Box>
-</Center>
+
+<Image src={image2} marginLeft ='20px' marginTop='150px' textAlign='right' position="absolute" alignItems= 'flex-end' width= '250' height= '400' float='right' object-position= 'right'></Image>
+<Text color={'black'} fontSize= "15px"position="absolute" left="570px" top="620px" textAlign="left" >
+Please take a moment to observe the painting. 
+  </Text>
+<Button colorScheme='blue' marginLeft ='1000px' marginTop ='550px' onClick={() => navigate('/thirdpage')}>Next</Button>
+
+
 </Flex>
 
 

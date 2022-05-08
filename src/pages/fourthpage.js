@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../duraeuropos.jpeg";
+import image from "../duraeuropos2.png";
 
 import {
     Box,
@@ -15,7 +15,7 @@ import {
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
 import FifthPage from '../pages/fifthpage';
-export default function FourtPage() {
+export default function FourthPage() {
     const navigate = useNavigate();
     return (
         <div style={{ backgroundImage: `url(${image})`, backgroundPosition: "center",
@@ -32,11 +32,9 @@ export default function FourtPage() {
 </Container> */}
 
 <Flex alignContent='center' justifyContent='center'>
-<Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
-<Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/fifthpage')}>Next</Button>
-</Box>
-</Center>
+<Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/fifthpage')}>
+          Next
+        </Button>
 </Flex>
 
 

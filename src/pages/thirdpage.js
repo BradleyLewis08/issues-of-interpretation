@@ -1,5 +1,6 @@
 import React from 'react';
-import image from "../duraeuropos.jpeg";
+import image from "../duraeuropos2.png";
+import image2 from '../duraeuropos3.jpeg';
 
 import {
     Box,
@@ -11,7 +12,8 @@ import {
     useColorModeValue,
     Center,
     Flex,
-    ButtonGroup
+    ButtonGroup,
+    Image
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
 import FourthPage from '../pages/fourthpage';
@@ -30,14 +32,33 @@ export default function ThirdPage() {
     and feel, not just in our design specs, but in production.
   </Box>
 </Container> */}
-
-<Flex alignContent='center' justifyContent='center'>
-<Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
-<Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/fourthpage')}>Next</Button>
-</Box>
-</Center>
-</Flex>
+<Flex alignContent="center" justifyContent="center">
+        <Image
+          src={image2}
+          marginLeft="20px"
+          marginTop="150px"
+          textAlign="right"
+          position="absolute"
+          alignItems="flex-end"
+          width="150"
+          height="300"
+          float="right"
+          object-position="right"
+        ></Image>
+        <Text
+          color={'black'}
+          fontSize="15px"
+          position="absolute"
+          left="400px"
+          top="520px"
+          textAlign="left"
+        >
+          Describe the painting you see here. What is the material? What are the contents of the painting?
+        </Text>
+        <Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/fourthpage')}>
+          Next
+        </Button>
+      </Flex>
 
 
         </div>

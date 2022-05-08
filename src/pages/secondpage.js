@@ -67,13 +67,7 @@ export default function SecondPage() {
         >
           Please take a moment to observe the painting.
         </Text>
-        <Button
-          visibility={buttonVisibility}
-          colorScheme="blue"
-          marginLeft="1000px"
-          marginTop="550px"
-          onClick={() => navigate('/thirdpage')}
-        >
+        <Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/thirdpage')}>
           Next
         </Button>
       </Flex>

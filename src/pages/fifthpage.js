@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "../duraeuropos.jpeg";
+import image from "../duraeuropos2.png";
 
 import {
     Box,
@@ -32,11 +32,9 @@ export default function FifthPage() {
 </Container> */}
 
 <Flex alignContent='center' justifyContent='center'>
-<Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
-<Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/sixthpage')}>Next</Button>
-</Box>
-</Center>
+<Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/sixthpage')}>
+          Next
+        </Button>
 </Flex>
 
 

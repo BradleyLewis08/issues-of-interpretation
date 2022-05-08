@@ -1,6 +1,6 @@
 import React from 'react';
-import image from "../duraeuropos.jpeg";
-
+import image from "../duraeuropos2.png";
+import image2 from "../slide10.png"
 import {
     Box,
     Heading,
@@ -11,7 +11,8 @@ import {
     useColorModeValue,
     Center,
     Flex,
-    ButtonGroup
+    ButtonGroup,
+    Image
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router';
 import TenthPage from '../pages/tenthpage';
@@ -32,11 +33,25 @@ export default function NinthPage() {
 </Container> */}
 
 <Flex alignContent='center' justifyContent='center'>
-<Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
-<Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/tenthpage')}>Next</Button>
-</Box>
-</Center>
+  <Heading
+  color={'black'}
+  position="absolute"
+  left="580px"
+  top="180px"
+  textAlign="left"
+  >Museum Context</Heading>
+  <Text
+  color={'black'}
+  position="absolute"
+  left="170px"
+  top="240px"
+  textAlign="left"
+  marginRight="70px"
+  >This specific house church building is located in the ancient city of Dura Europos. The Baptistery wall paintings are currently held and displayed by the <br></br> Yale University Art Gallery.</Text>
+<Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/tenthpage')}>
+          Next
+        </Button>
+        <Image src={image2} marginLeft ='40px' marginTop='230px' position="absolute" width= '150' height= '340'></Image>
 </Flex>
 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import image from "../duraeuropos2.png";
-import image2 from "../slide11.png";
 
 import {
     Box,
@@ -41,13 +40,13 @@ export default function EleventhPage() {
 </Container> */}
 
   
- <Image src={image2} marginLeft ='700px' marginTop='160px' textAlign='right' position="absolute" alignItems= 'flex-end' width= '200' height= '400' float='right' object-position= 'right'></Image>  
- <Text color={'black'} fontSize= "15px"position="absolute" left="200px" top="230px" textAlign="left" marginRight = '800px' marginBottom ='550px'>
- The Dura Europos exhibit at the YUAG presents the Baptistery paintings on one wall, with the connecting walls on either side containing: (1) On the left: the painted ceiling tiles from the Dura Europos Synagogue, and (2) On the right: the partial reconstruction of the Mithraeum. The close placement of these artifacts from these sites alongside each other reflects also the locations of these sites in antiquity. The Mithraeum, Synagogue, and Christian building are all located along the western wall of the city.
-  </Text>
-<Button colorScheme='blue' marginLeft ='1200px' marginTop ='570px' onClick={() => navigate('/twelfthpage')}>Next</Button>
-
-
+<Center>
+    <Heading color={'black'} marginTop ='300px' size="4xl">Thank you!</Heading>
+    
+    </Center>
+<Center>
+<Button colorScheme='green' marginTop="100px" onClick={() => navigate('/')}>Click here to start over.</Button>
+</Center>
 
         </div>
         

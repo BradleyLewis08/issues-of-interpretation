@@ -38,8 +38,6 @@ export default function TwelfthPage() {
 </Box>
 </Center>
 </Flex>
-
-
         </div>
         
       );

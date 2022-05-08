@@ -40,9 +40,14 @@ function useProvideAuth() {
   const [userData, setUserData] = useState(null);
 
   const getUser = (docref) => {
-	return getDoc(docref).then((snapshot) => {
-		  return snapshot.data();
-	});
+    return getDoc(docref).then((snapshot) => {
+        if(snapshot.exists()){
+          return snapshot.data();
+        } else {
+          console.log(" user does not exist");
+          return null;
+        }
+    });
   }
 
   const addUser = (firstName, lastName, email, uid) => {
@@ -64,10 +69,10 @@ function useProvideAuth() {
 }
   const signin = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password).then(response => {
-      setUser(response.user);
 	  const docref = doc(db, 'users', response.user.uid);
 	  getUser(docref).then((data) => {
-		setUserData(data);
+      setUserData(data);
+      setUser(response.user);
 	  }	
 	  );
     }).catch(error => {
@@ -85,7 +90,7 @@ function useProvideAuth() {
   const signout = () => {
     signOut(auth).then(() => {
       setUser(false);
-	  setUserData(false);
+      setUserData(false);
     });
   };
   // Subscribe to user on mount
@@ -107,7 +112,7 @@ function useProvideAuth() {
     signin,
     signup,
     signout,
-	addUser,
-	userData
+    addUser,
+    userData
   };
 }

@@ -11,6 +11,7 @@ import Signup from  './pages/authentication/signup';
 import Signin from './pages/authentication/signin';
 import Navbar from './nav/navbar';
 import Start from './pages/start'
+import Describe from './pages/describe/Describe';
 import Timeline from './pages/timeline'
 import Viewer from './pages/viewer'
 import FirstPage from './pages/firstpage';
@@ -25,6 +26,7 @@ import NinthPage from './pages/ninthpage';
 import TenthPage from './pages/tenthpage';
 import TwelfthPage from './pages/twelfthpage';
 import EleventhPage from './pages/eleventhpage';
+
 import { useAuth } from './firebase/useAuth';
 
 export default function AppRoutes(){
@@ -34,9 +36,10 @@ export default function AppRoutes(){
 		<>
 			<Navbar />
 			<Routes>
-				{ auth.userData ? (
+				{ auth.user ? (
 					<>
 					<Route path="/" element={<Start />} />
+					<Route path="/describe" element={<Describe />} />
 					<Route path="/timeline" element={<Timeline />} />
 					<Route path="/viewer" element={<Viewer />} />
 					<Route path="/firstpage" element={<FirstPage />} />

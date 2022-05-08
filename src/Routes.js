@@ -36,7 +36,7 @@ export default function AppRoutes(){
 		<>
 			<Navbar />
 			<Routes>
-				{ auth.user ? (
+				{ auth.userData ? (
 					<>
 					<Route path="/" element={<Start />} />
 					<Route path="/describe" element={<Describe />} />

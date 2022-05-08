@@ -2,7 +2,6 @@ import React from 'react';
 import { Chrono } from 'react-chrono';
 import './timeline.css';
 import { Image } from '@chakra-ui/react';
-import myimage from './images/painting.png';
 
 export default function Timeline({ props }) {
   const items1 = [
@@ -223,14 +222,7 @@ export default function Timeline({ props }) {
           }}
           margin="50px"
           mode="HORIZONTAL"
-        >
-			<div>
-				<Image src={myimage}></Image>
-			</div>
-			<div>
-				<Image src={myimage}></Image>
-			</div>
-		</Chrono>
+        />
       </div>
     </>
   );

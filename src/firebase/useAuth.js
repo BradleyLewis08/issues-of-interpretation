@@ -101,6 +101,11 @@ function useProvideAuth() {
 	  onAuthStateChanged(auth, user => {
     if (user) {
       setUser(user);
+      const docref = doc(db, 'users', user.uid);
+      getUser(docref).then((data) => {
+        setUserData(data);
+      }
+      );
     } else {
       setUser(false);
     }

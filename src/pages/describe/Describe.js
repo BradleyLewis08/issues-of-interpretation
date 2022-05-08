@@ -3,19 +3,21 @@ import {
 	Center,
 	Heading,
 	Image,
+	VStack,
 } from '@chakra-ui/react'
 
 import { useAuth } from '../../firebase/useAuth'
+import painting from './painting.png'
 
 export default function Describe(){
 	const auth = useAuth()
 	console.log(auth.userData);
 	return (
-		<Center>
-			<Image src={'painting.png'} />
+		<VStack>
 			<Heading>
-				Describe your painting
+				Take a moment to observe the painting.
 			</Heading>
-		</Center>
+			<Image src={painting} />
+		</VStack>
 	)
 }

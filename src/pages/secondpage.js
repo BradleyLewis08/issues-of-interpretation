@@ -1,29 +1,41 @@
-import React from 'react';
-import image from "../duraeuropos2.png";
-import image2 from "../duraeuropos3.jpeg";
+import React, { useState, useEffect } from 'react';
+import image from '../duraeuropos2.png';
+import image2 from '../duraeuropos3.jpeg';
 import {
-    Box,
-    Heading,
-    Container,
-    Text,
-    Button,
-    Stack,
-    useColorModeValue,
-    Center,
-    Flex,
-    ButtonGroup,
-    Image
-  } from '@chakra-ui/react';
-  import { useNavigate } from 'react-router';
+  Box,
+  Heading,
+  Container,
+  Text,
+  Button,
+  Stack,
+  useColorModeValue,
+  Center,
+  Flex,
+  ButtonGroup,
+  Image,
+} from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
 import ThirdPage from '../pages/thirdpage';
 export default function SecondPage() {
-    const navigate = useNavigate();
-    return (
-        <div style={{ backgroundImage: `url(${image})`, backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover", width: '100vw',
-    height: '95vh'}}>
-        {/* <Container maxW='5xl' maxH='5xl' bg='blue.600' centerContent>
+  const [buttonVisibility, setButtonVisibility] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setButtonVisibility(true);
+    }, 5000)
+  }, [])
+  const navigate = useNavigate();
+  return (
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        width: '100vw',
+        height: '95vh',
+      }}
+    >
+      {/* <Container maxW='5xl' maxH='5xl' bg='blue.600' centerContent>
   <Box padding='4' bg='blue.400' color='black' maxW='lg'>
     There are many benefits to a joint design and development system. Not only
     does it bring benefits to the design team, but it also brings benefits to
@@ -32,19 +44,39 @@ export default function SecondPage() {
   </Box>
 </Container> */}
 
-<Flex alignContent='center' justifyContent='center'>
-
-<Image src={image2} marginLeft ='20px' marginTop='150px' textAlign='right' position="absolute" alignItems= 'flex-end' width= '250' height= '400' float='right' object-position= 'right'></Image>
-<Text color={'black'} fontSize= "15px"position="absolute" left="570px" top="620px" textAlign="left" >
-Please take a moment to observe the painting. 
-  </Text>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='550px' onClick={() => navigate('/thirdpage')}>Next</Button>
-
-
-</Flex>
-
-
-        </div>
-        
-      );
+      <Flex alignContent="center" justifyContent="center">
+        <Image
+          src={image2}
+          marginLeft="20px"
+          marginTop="150px"
+          textAlign="right"
+          position="absolute"
+          alignItems="flex-end"
+          width="250"
+          height="400"
+          float="right"
+          object-position="right"
+        ></Image>
+        <Text
+          color={'black'}
+          fontSize="15px"
+          position="absolute"
+          left="570px"
+          top="620px"
+          textAlign="left"
+        >
+          Please take a moment to observe the painting.
+        </Text>
+        <Button
+          visibility={buttonVisibility}
+          colorScheme="blue"
+          marginLeft="1000px"
+          marginTop="550px"
+          onClick={() => navigate('/thirdpage')}
+        >
+          Next
+        </Button>
+      </Flex>
+    </div>
+  );
 }

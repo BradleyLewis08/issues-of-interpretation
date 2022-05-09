@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { Viewer } from "./Viewer";
+import Delayed from "./Delayed";
 
 import {
+  Grid,
+  GridItem,
   Box,
   Heading,
   Container,
@@ -38,12 +41,47 @@ function App() {
     );
   };
 
+  // Note: Delayed is set to 1ms, intended to be set at 30s (i.e. 30000ms on later version)
   return (
     <div className="App">
-      <Viewer apiRef={apiRef} />
-      <Button colorScheme='blue' onClick={hidePaintings}>show/hide paintings</Button>
-      <Button colorScheme='blue' onClick={() => navigate('/timeline')}>To Timeline</Button>
-
+      <Flex alignContent='flex-start' justifyContent='flex-start'>
+      <Grid
+      h = '70%'
+      w = '100%'
+      templateColumns='repeat(20, 1fr)'
+      templateRows='repeat(7, 1fr)'
+      gap={5}
+      >
+        <GridItem colSpan={14} rowSpan = {8} bg = "lightblue" margin = "2%">
+        <Center margin = '5%'>
+          <Viewer apiRef={apiRef}/>
+        </Center>
+        </GridItem>
+        <GridItem colSpan = {4} rowSpan = {1} bg = "lightblue" margin = "5%">
+          <Center margin="5%"><Text>
+              Observe this space. Click the "play" button and browse the annotations.
+            </Text></Center>
+        </GridItem>
+        
+        <Delayed waitBeforeShow={1}>
+        <GridItem colSpan = {4} rowSpan = {1} bg = "lightblue" margin = "5%">
+          <Box bg = "lightblue" position="relative">
+            <Center>
+            <Text>Why don't you try this button?</Text>
+            </Center>
+            <Center>
+            <Button colorScheme='blue' onClick={hidePaintings}>Show/Hide paintings</Button>
+            </Center>
+          </Box>
+        </GridItem>
+        <GridItem rowStart = {7} colStart = {15} colEnd = {19} margin = "5%" bg = "lightblue">
+        <Center margin = "6%">
+          <Button colorScheme='blue' onClick={() => navigate('/ninthpage')}>Next</Button>
+        </Center>
+        </GridItem>
+        </Delayed>
+      </Grid>
+      </Flex>
     </div>
   );
 }

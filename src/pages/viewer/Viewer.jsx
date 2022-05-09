@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Box,
   Heading,
@@ -9,11 +9,11 @@ import {
   useColorModeValue,
   Center,
   Flex,
-  ButtonGroup
+  ButtonGroup,
 } from '@chakra-ui/react';
 
 // Our wonderful chair model
-const MODEL_UID = "c9bbafb3ea9a44a1b30edfae8155c48c";
+const MODEL_UID = 'c9bbafb3ea9a44a1b30edfae8155c48c';
 
 const useSketchfabViewer = () => {
   // This ref will contain the actual iframe object
@@ -62,7 +62,7 @@ const useSketchfabViewer = () => {
         annotation_cycle: 'off',
         success: setApi,
         error: () => {
-          console.log("Viewer error");
+          console.log('Viewer error');
         },
       });
     },
@@ -78,5 +78,15 @@ export const Viewer = ({ apiRef }) => {
 
   apiRef.current = api;
 
-  return ViewerIframe;
+  return (
+    <Flex flexDirection="row">
+      {ViewerIframe}
+      <Text color={'black'} fontSize="30px" fontWeight={'bold'}>
+        Take a moment to observe this space, then click the button below to reveal the paintings.
+      </Text>
+      <Text color={'black'} fontSize="20px">
+
+      </Text>
+    </Flex>
+  );
 };

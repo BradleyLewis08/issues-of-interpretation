@@ -2,27 +2,21 @@ import React, { useState, useEffect } from 'react';
 import image from '../duraeuropos2.png';
 import image2 from '../duraeuropos3.jpeg';
 import {
-  Box,
-  Heading,
-  Container,
   Text,
   Button,
-  Stack,
-  useColorModeValue,
-  Center,
   Flex,
-  ButtonGroup,
   Image,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
-import ThirdPage from '../pages/thirdpage';
+import Subtext from '../components/subtext';
 export default function SecondPage() {
   const [buttonVisibility, setButtonVisibility] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setButtonVisibility(true);
-    }, 5000)
-  }, [])
+    }, 5000);
+  }, []);
+
   const navigate = useNavigate();
   return (
     <div
@@ -48,7 +42,7 @@ export default function SecondPage() {
         <Image
           src={image2}
           marginLeft="20px"
-          marginTop="150px"
+          marginTop="200px"
           textAlign="right"
           position="absolute"
           alignItems="flex-end"
@@ -57,19 +51,14 @@ export default function SecondPage() {
           float="right"
           object-position="right"
         ></Image>
-        <Text
-          color={'black'}
-          fontSize="15px"
-          position="absolute"
-          left="570px"
-          top="620px"
-          textAlign="left"
-        >
+        <Subtext>
           Please take a moment to observe the painting.
-        </Text>
-        <Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/thirdpage')}>
-          Next
-        </Button>
+        </Subtext>
+          {buttonVisibility && (
+          <Button colorScheme='blue' marginLeft ='1030px' marginTop ='650px' onClick={() => navigate('/thirdpage')}>
+            Next
+          </Button>
+          )}
       </Flex>
     </div>
   );

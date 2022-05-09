@@ -8,7 +8,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 
-import { getFirestore, collection, addDoc, getDoc, setDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, updateDoc, getDoc, setDoc, doc } from 'firebase/firestore';
 // Add your Firebase credentials
 const app = firebase.initializeApp({
   apiKey: 'AIzaSyDmIzunzi3t3Nt5AckLleMyqQiXqZWs4YE',
@@ -47,6 +47,15 @@ function useProvideAuth() {
           console.log(" user does not exist");
           return null;
         }
+    });
+  };
+
+  const saveAnswer = (answer) => {
+    const docref = doc(db, 'users', user.uid);
+    return updateDoc(docref, {
+      [answer.id]: answer.answer
+    }).catch((error) => {
+      console.log(error);
     });
   }
 
@@ -118,6 +127,7 @@ function useProvideAuth() {
     signup,
     signout,
     addUser,
-    userData
+    userData,
+    saveAnswer
   };
 }

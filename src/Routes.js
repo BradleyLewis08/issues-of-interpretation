@@ -26,7 +26,6 @@ import NinthPage from './pages/ninthpage';
 import TenthPage from './pages/tenthpage';
 import TwelfthPage from './pages/twelfthpage';
 import EleventhPage from './pages/eleventhpage';
-import Slide33 from './pages/slide33';
 import Slide34 from './pages/slide34';
 import Slide35 from './pages/slide35';
 import ThankYou from './pages/thankyou';
@@ -58,9 +57,6 @@ export default function AppRoutes(){
 					<Route path="/tenthpage" element={<TenthPage />} />
 					<Route path="/eleventhpage" element={<EleventhPage />} />
 					<Route path="/twelfthpage" element={<TwelfthPage />} />
-					<Route path="/slide33" element={<Slide33 />} />
-					<Route path="/slide34" element={<Slide34 />} />
-					<Route path="/slide35" element={<Slide35 />} />
 					<Route path="/thankyou" element={<ThankYou />} />
 					</>
 				) : (

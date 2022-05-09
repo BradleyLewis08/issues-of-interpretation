@@ -81,11 +81,7 @@ export const Viewer = ({ apiRef }) => {
   return (
     <Flex flexDirection="row">
       {ViewerIframe}
-      <Text color={'black'} fontSize="30px" fontWeight={'bold'}>
-        Take a moment to observe this space, then click the button below to reveal the paintings.
-      </Text>
       <Text color={'black'} fontSize="20px">
-
       </Text>
     </Flex>
   );

@@ -34,20 +34,19 @@ export default function FirstPage() {
         >
           <Image src={image2} width="150" height="300" />
           <Text color={'black'} fontSize="15px" alignSelf="center">
-            If you walked into a museum and saw this artwork, how would you
-            identify the figures in this painting? How would your opinion change
-            if you saw this painting in a Christian church? In a museum,
-            visitors may rely on the label descriptions to understand the
-            background of the painting. On the other hand, in a church context,
-            one would presumably connect the iconography of the painting with
-            the beliefs of the religious culture. In this case, it is possible
-            that one might associate the painting with Mary and Jesus (although
-            it would be incorrect).
+            This project focuses on the Dura Europos painting, “the Procession
+            of Women,” in an exercise that guides the learner in
+            recontextualizing the iconography of the painting. After removing
+            the painting from its gallery context, the learner will explore
+            different levels of contextualization, including a review of
+            scholarly interpretations. The goal is to highlight the historical
+            context, which reveals a diversity of ancient Christianities, and
+            help learners value the complexity of constructing interpretations.
           </Text>
           <Button
             mt="30px"
             colorScheme="blue"
-            onClick={() => navigate('/firstpage2')}
+            onClick={() => navigate('/secondpage')}
             width="100px"
           >
             Next

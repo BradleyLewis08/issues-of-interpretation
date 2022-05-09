@@ -8,7 +8,7 @@ import {
 
 import { useAuth } from '../firebase/useAuth';
 
-export default function QuestionBox({id, callback=()=>{} }){
+export default function QuestionBox({id, callback=()=>{}, color="black" }){
 	const auth = useAuth();
 	const [answer, setAnswer] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -34,6 +34,7 @@ export default function QuestionBox({id, callback=()=>{} }){
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           isInvalid={isInvalid}
+		  color={color}
         />
         <Button
           colorScheme="blue"

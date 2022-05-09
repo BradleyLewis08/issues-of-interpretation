@@ -34,20 +34,12 @@ export default function FirstPage() {
         >
           <Image src={image2} width="150" height="300" />
           <Text color={'black'} fontSize="15px" alignSelf="center">
-            If you walked into a museum and saw this artwork, how would you
-            identify the figures in this painting? How would your opinion change
-            if you saw this painting in a Christian church? In a museum,
-            visitors may rely on the label descriptions to understand the
-            background of the painting. On the other hand, in a church context,
-            one would presumably connect the iconography of the painting with
-            the beliefs of the religious culture. In this case, it is possible
-            that one might associate the painting with Mary and Jesus (although
-            it would be incorrect).
+          When we turn to ancient artwork we often encounter in museums, we depend on labels to understand the context. Of course, ancient people would have encountered the iconography in their original context and understood its meaning and function. But since we do not have direct access to the communities and beliefs of ancient people, how do we attempt to understand ancient art from their perspective? In a museum, we rely on the short explanations provided by the professionals, which can seem absolute. But these labels can obscure how some art continues to be debated and reinterpreted today in scholarship, and thus, nuances are lost.  
           </Text>
           <Button
             mt="30px"
             colorScheme="blue"
-            onClick={() => navigate('/firstpage2')}
+            onClick={() => navigate('/firstpage3')}
             width="100px"
           >
             Next

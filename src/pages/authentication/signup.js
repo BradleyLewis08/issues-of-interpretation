@@ -13,6 +13,7 @@ import {
 	Text,
 	useColorModeValue,
 	Link,
+	useToast
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
@@ -27,6 +28,7 @@ import {
 	const [lastName , setLastName] = useState('');
 	const [email , setEmail] = useState('');
 	const [password , setPassword] = useState('');
+	const toast = useToast();
   
 	return (
 	  <Flex
@@ -105,7 +107,11 @@ import {
 					auth.signup(firstName, lastName, email, password).then(() => {
 						navigate('/')
 					}).catch((error) => {
-						console.log(error)
+						toast({
+							title: 'Error',
+							status: 'error',
+							isClosable: true,
+						})
 					}
 					)
 				  }}
@@ -117,7 +123,7 @@ import {
 			  </Stack>
 			  <Stack pt={6}>
 				<Text align={'center'}>
-				  Already a user? <Link color={'blue.400'}>Login</Link>
+				  Already a user? <Link color={'blue.400'} onClick={() => navigate('/signin')}>Sign in</Link>
 				</Text>
 			  </Stack>
 			</Stack>

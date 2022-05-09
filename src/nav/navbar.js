@@ -66,7 +66,9 @@ import {
 			</Text>
   
 			<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-			  <DesktopNav />
+			  {auth.userData && (
+				  <Text>Logged in as {auth.userData.firstName}</Text> 
+			  )}
 			</Flex>
 		  </Flex>
   

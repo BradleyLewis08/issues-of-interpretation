@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
+import {authErrors} from './authErrors';
 
 import { getFirestore, collection, updateDoc, getDoc, setDoc, doc } from 'firebase/firestore';
 // Add your Firebase credentials
@@ -84,16 +85,18 @@ function useProvideAuth() {
       setUser(response.user);
 	  }	
 	  );
-    }).catch(error => {
-		console.log(error);
-	});
+    }).catch((error) => {
+      console.log(error.message);
+    });
   };
 
   const signup = (firstName, lastName, email, password) => {
     return createUserWithEmailAndPassword(auth, email, password).then(response => {
       setUser(response.user);
-	  return addUser(firstName, lastName, email, response.user.uid);
-    });
+      return addUser(firstName, lastName, email, response.user.uid);
+    }).catch((err) => {
+      return authErrors[err.code];
+    })
   };
 
   const signout = () => {
@@ -102,6 +105,13 @@ function useProvideAuth() {
       setUserData(false);
     });
   };
+
+  const fetchQuestionData = () => {
+    const docref = doc(db, 'users', user.uid);
+    return getUser(docref).then((data) => {
+      return data;
+    })
+  }
   // Subscribe to user on mount
   // Because this sets state in the callback it will cause any ...
   // ... component that utilizes this hook to re-render with the ...
@@ -128,6 +138,7 @@ function useProvideAuth() {
     signout,
     addUser,
     userData,
-    saveAnswer
+    saveAnswer,
+    fetchQuestionData
   };
 }

@@ -15,6 +15,8 @@ import Describe from './pages/describe/Describe';
 import Timeline from './pages/timeline'
 import Viewer from './pages/viewer'
 import FirstPage from './pages/firstpage';
+import SecondParagraph from './pages/secondparagraph';
+import ThirdParagraph from './pages/thirdparagraph';
 import SecondPage from './pages/secondpage';
 import ThirdPage from './pages/thirdpage';
 import FourthPage from './pages/fourthpage';
@@ -26,6 +28,7 @@ import NinthPage from './pages/ninthpage';
 import TenthPage from './pages/tenthpage';
 import TwelfthPage from './pages/twelfthpage';
 import EleventhPage from './pages/eleventhpage';
+import Slide33 from './pages/slide33';
 import Slide34 from './pages/slide34';
 import Slide35 from './pages/slide35';
 import ThankYou from './pages/thankyou';
@@ -46,6 +49,8 @@ export default function AppRoutes(){
 					<Route path="/timeline" element={<Timeline />} />
 					<Route path="/viewer" element={<Viewer />} />
 					<Route path="/firstpage" element={<FirstPage />} />
+					<Route path="firstpage2" element={<SecondParagraph />} />
+					<Route path="firstpage3" element={<ThirdParagraph />} />
 					<Route path="/secondpage" element={<SecondPage />} />
 					<Route path="/thirdpage" element={<ThirdPage />} />
 					<Route path="/fourthpage" element={<FourthPage />} />
@@ -57,6 +62,8 @@ export default function AppRoutes(){
 					<Route path="/tenthpage" element={<TenthPage />} />
 					<Route path="/eleventhpage" element={<EleventhPage />} />
 					<Route path="/twelfthpage" element={<TwelfthPage />} />
+					<Route path="/slide33" element={<Slide33 />} />
+					<Route path="/slide34" element={<Slide34 />} />
 					<Route path="/thankyou" element={<ThankYou />} />
 					</>
 				) : (
@@ -64,6 +71,7 @@ export default function AppRoutes(){
 						<Route path="/" element={<Welcome />} />
 						<Route path="/signup" element={<Signup />} />
 						<Route path="/signin" element={<Signin />} />
+						<Route path="*" element={<Navigate to="/" />} />
 					</>
 				)
 			}

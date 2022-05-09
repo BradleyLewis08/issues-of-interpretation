@@ -34,7 +34,7 @@ export default function TwelfthPage() {
 <Flex alignContent='center' justifyContent='center'>
 <Center w="1200px" h="600px" bg="lightblue" margin ='100px'>
 <Box bg='white' w = '94%' h='90%' p={4} color='white' display= 'flex' alignItems= 'center' justifyContent= 'center'>
-<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/viewer')}>Next</Button>
+<Button colorScheme='blue' marginLeft ='1000px' marginTop ='450px' onClick={() => navigate('/timeline')}>Next</Button>
 </Box>
 </Center>
 </Flex>

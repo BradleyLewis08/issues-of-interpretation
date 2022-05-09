@@ -55,7 +55,7 @@ export default function ThirdPage() {
         >
           Describe the painting you see here. What is the material? What are the contents of the painting?
         </Text>
-        <Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/fourthpage')}>
+        <Button colorScheme='blue' marginLeft ='1030px' marginTop ='570px' onClick={() => navigate('/Viewer')}>
           Next
         </Button>
       </Flex>

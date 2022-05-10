@@ -36,6 +36,7 @@ const useSketchfabViewer = () => {
       client.init(MODEL_UID, {
         annotation: 0, // Usage: Setting to [1 – 100] will automatically load that annotation when the viewer starts.
         annotations_visible: 1, // Usage: Setting to 0 will hide annotations by default.
+        annotation_tooltip_visible: 1,
         autospin: 0, // Usage: Setting to any other number will cause the model to automatically spin around the z-axis after loading.
         autostart: 0, // Usage: Setting to 1 will make the model load immediately once the page is ready, rather than waiting for a user to click the Play button.
         cardboard: 0, // Usage: Start the viewer in stereoscopic VR Mode built for Google Cardboard and similar devices.
